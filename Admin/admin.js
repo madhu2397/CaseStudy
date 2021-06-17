@@ -1,0 +1,12 @@
+const express = require("express");
+const app = express();
+
+const port = process.env.PORT || 3000;
+
+app.get("/admin",(req,res)=>{
+    res.send("Hey I am the Admin");
+})
+
+app.listen(port,(req,res)=>{
+    console.log("server Up and running on port 3000");
+})
