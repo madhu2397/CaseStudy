@@ -1,0 +1,128 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Washer Api",
+      "description": "Washer API Microservice",
+      "contact": {
+        "name": "Madhuri Gavade",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:7000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "washer",
+        "description": "washer API"
+      }
+    ],
+    "paths": {
+      "/wash": {
+        "get": {
+          "tags": [
+            "washer"
+          ],
+          "summary": "Get all washer in system",
+          "responses": {
+            "200": {
+              "description": "Get all washers from the system",
+              "schema": {
+                "$ref": "#/definitions/washer"
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "washer"
+          ],
+          "description": "Create new washer in system",
+          "parameters": [
+            {
+              "name": "washer",
+              "in": "body",
+              "description": "washer that we want to create",
+              "schema": {
+                "$ref": "#/definitions/washer"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New washer is created",
+              "schema": {
+                "$ref": "#/definitions/washer"
+              }
+            }
+          }
+        }
+      },
+      "/wash/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of washer that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "washer"
+          ],
+          "summary": "Get single washer in system",
+          "responses": {
+            "200": {
+              "description": "All washer are here",
+              "schema": {
+                "$ref": "#/definitions/washer"
+              }
+            }
+          }
+        },
+        "put": {
+          "parameters": [
+            {
+              "name": "washer",
+              "in": "body",
+              "description": "washer with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updatewasher"
+              }
+            }
+          ],
+          "tags": [
+            "washer"
+          ],
+          "summary": "Get all Update washer in system",
+          "responses": {
+            "200": {
+              "description": "Update washer",
+              "schema": {
+                "$ref": "#/definitions/washer"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete car with given ID",
+          "tags": [
+            "washer"
+          ],
+          "responses": {
+            "200": {
+              "description": "User is deleted",
+              "schema": {
+                "$ref": "#/definitions/washer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,128 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Admin Api",
+      "description": "Admin API Microservice",
+      "contact": {
+        "name": "Madhuri Gavade",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "service",
+        "description": "service API"
+      }
+    ],
+    "paths": {
+      "/admins": {
+        "get": {
+          "tags": [
+            "service"
+          ],
+          "summary": "Get all services in system",
+          "responses": {
+            "200": {
+              "description": "Get all service from the system",
+              "schema": {
+                "$ref": "#/definitions/service"
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "service"
+          ],
+          "description": "Create new service in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "service that we want to create",
+              "schema": {
+                "$ref": "#/definitions/service"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New service is created",
+              "schema": {
+                "$ref": "#/definitions/service"
+              }
+            }
+          }
+        }
+      },
+      "/admins/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of service that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "service"
+          ],
+          "summary": "Get single service in system",
+          "responses": {
+            "200": {
+              "description": "All service are here",
+              "schema": {
+                "$ref": "#/definitions/service"
+              }
+            }
+          }
+        },
+        "put": {
+          "parameters": [
+            {
+              "name": "service",
+              "in": "body",
+              "description": "service with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateservice"
+              }
+            }
+          ],
+          "tags": [
+            "service"
+          ],
+          "summary": "Get all Update carservice in system",
+          "responses": {
+            "200": {
+              "description": "Update Carservice",
+              "schema": {
+                "$ref": "#/definitions/Carservice"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete carservice with given ID",
+          "tags": [
+            "service"
+          ],
+          "responses": {
+            "200": {
+              "description": "service is deleted",
+              "schema": {
+                "$ref": "#/definitionsservice"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

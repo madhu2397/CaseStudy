@@ -1,0 +1,129 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Admin Api",
+      "description": "Admin API Microservice",
+      "contact": {
+        "name": "Madhuri Gavade",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "promo",
+        "description": "promo API"
+      }
+    ],
+    "paths": {
+      "/adminp": {
+        "get": {
+          "tags": [
+            "promo"
+          ],
+          "summary": "Get all promos in system",
+          "responses": {
+            "200": {
+              "description": "Get all promo from the system",
+              "schema": {
+                "$ref": "#/definitions/promo"
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "promo"
+          ],
+          "description": "Create new service in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "promo that we want to create",
+              "schema": {
+                "$ref": "#/definitions/promo"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New promo is created",
+              "schema": {
+                "$ref": "#/definitions/promo"
+              }
+            }
+          }
+        }
+      },
+      "/adminp/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of promo that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "promo"
+          ],
+          "summary": "Get single promo in system",
+          "responses": {
+            "200": {
+              "description": "All promo are here",
+              "schema": {
+                "$ref": "#/definitions/promo"
+              }
+            }
+          }
+        },
+        "put": {
+          "parameters": [
+            {
+              "name": "promo",
+              "in": "body",
+              "description": "promo with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updatepromo"
+              }
+            }
+          ],
+          "tags": [
+            "promo"
+          ],
+          "summary": "Get all Update promo in system",
+          "responses": {
+            "200": {
+              "description": "Update promo",
+              "schema": {
+                "$ref": "#/definitions/promo"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete promo with given ID",
+          "tags": [
+            "promo"
+          ],
+          "responses": {
+            "200": {
+              "description": "promo is deleted",
+              "schema": {
+                "$ref": "#/definitions/promo"
+              }
+            }
+          }
+        }
+      }
+    }
+}
+    

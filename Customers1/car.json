@@ -1,0 +1,128 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Admin Api",
+    "description": "Admin API Microservice",
+    "contact": {
+      "name": "Madhuri Gavade",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:4545",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Customer",
+      "description": "Customer API"
+    }
+  ],
+  "paths": {
+    "/customer": {
+      "get": {
+        "tags": [
+          "Car"
+        ],
+        "summary": "Get all Car in system",
+        "responses": {
+          "200": {
+            "description": "Get all Cars from the system",
+            "schema": {
+              "$ref": "#/definitions/car"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Car"
+        ],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/car/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of car that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Car"
+        ],
+        "summary": "Get single car in system",
+        "responses": {
+          "200": {
+            "description": "All car are here",
+            "schema": {
+              "$ref": "#/definitions/car"
+            }
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "name": "car",
+            "in": "body",
+            "description": "Car with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/updatecar"
+            }
+          }
+        ],
+        "tags": [
+          "Car"
+        ],
+        "summary": "Get all Update car in system",
+        "responses": {
+          "200": {
+            "description": "Update Car",
+            "schema": {
+              "$ref": "#/definitions/Car"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete car with given ID",
+        "tags": [
+          "Car"
+        ],
+        "responses": {
+          "200": {
+            "description": "User is deleted",
+            "schema": {
+              "$ref": "#/definitions/Car"
+            }
+          }
+        }
+      }
+    }
+  }
+}

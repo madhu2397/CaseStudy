@@ -1,0 +1,129 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Admin Api",
+      "description": "Admin API Microservice",
+      "contact": {
+        "name": "Madhuri Gavade",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "admin",
+        "description": "admin API"
+      }
+    ],
+    "paths": {
+      "/create": {
+        "get": {
+          "tags": [
+            "admin"
+          ],
+          "summary": "Get all admins in system",
+          "responses": {
+            "200": {
+              "description": "Get all admin from the system",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "admin"
+          ],
+          "description": "Create new admin in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "admin that we want to create",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        }
+      },
+      "/create/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of admin that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "admin"
+          ],
+          "summary": "Get single admin in system",
+          "responses": {
+            "200": {
+              "description": "All admin are here",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        },
+        "put": {
+          "parameters": [
+            {
+              "name": "admin",
+              "in": "body",
+              "description": "admin with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateadmin"
+              }
+            }
+          ],
+          "tags": [
+            "admin"
+          ],
+          "summary": "Get all Update admin in system",
+          "responses": {
+            "200": {
+              "description": "Update admin",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete admin with given ID",
+          "tags": [
+            "admin"
+          ],
+          "responses": {
+            "200": {
+              "description": "admin is deleted",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        }
+      }
+    }
+}
+    

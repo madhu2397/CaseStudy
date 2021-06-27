@@ -1,0 +1,128 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Admin Api",
+      "description": "Admin API Microservice",
+      "contact": {
+        "name": "Madhuri Gavade",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "addon",
+        "description": "addon API"
+      }
+    ],
+    "paths": {
+      "/addon": {
+        "get": {
+          "tags": [
+            "addon"
+          ],
+          "summary": "Get all addons in system",
+          "responses": {
+            "200": {
+              "description": "Get all addon from the system",
+              "schema": {
+                "$ref": "#/definitions/addon"
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "addon"
+          ],
+          "description": "Create new addon in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "addon that we want to create",
+              "schema": {
+                "$ref": "#/definitions/addon"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New addon is created",
+              "schema": {
+                "$ref": "#/definitions/addon"
+              }
+            }
+          }
+        }
+      },
+      "/addon/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of addon that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "addon"
+          ],
+          "summary": "Get single addon in system",
+          "responses": {
+            "200": {
+              "description": "All addon are here",
+              "schema": {
+                "$ref": "#/definitions/addon"
+              }
+            }
+          }
+        },
+        "put": {
+          "parameters": [
+            {
+              "name": "addon",
+              "in": "body",
+              "description": "addon with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateaddon"
+              }
+            }
+          ],
+          "tags": [
+            "addon"
+          ],
+          "summary": "Get all Update caraddon in system",
+          "responses": {
+            "200": {
+              "description": "Update Caraddon",
+              "schema": {
+                "$ref": "#/definitions/Caraddon"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete caraddon with given ID",
+          "tags": [
+            "addon"
+          ],
+          "responses": {
+            "200": {
+              "description": "addon is deleted",
+              "schema": {
+                "$ref": "#/definitionsaddon"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
