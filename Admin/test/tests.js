@@ -30,22 +30,22 @@ describe("Tasks API", () => {
         })
     })
 })
-describe('POST /admins/:id', () => {
-    it("it should POST a new admins by id", (done) => {
-        const task1 = {
-            ServiceName: "Special Done"
-        }
-        chai.request(server)
-            .post('/admins')
-            .send(task1)
-            .end((err, response) => {
-                response.should.have.status(200);
-                response.body.should.be.a('object');
-                // response.body.should.have.property("id");
-                done();
-            })
-    })
-})
+// describe('POST /admins/:id', () => {
+//     it("it should POST a new admins by id", (done) => {
+//         const task1 = {
+//             ServiceName: "Special Done"
+//         }
+//         chai.request(server)
+//             .post('/admins')
+//             .send(task1)
+//             .end((err, response) => {
+//                 response.should.have.status(200);
+//                 response.body.should.be.a('object');
+//                 // response.body.should.have.property("id");
+//                 done();
+//             })
+//     })
+// })
 
 //Test the put route
     describe('PUT /admins/:id', () => {

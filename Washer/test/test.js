@@ -13,7 +13,7 @@ describe("Tasks API", () => {
                 .get("/wash")
                 .end((err, response) => {
                     response.should.have.status(200);
-                    response.body.length.should.be.eq(4);
+                    response.body.length.should.be.eq(5);
                     done();
                 })
         })
@@ -47,39 +47,7 @@ describe("Tasks API", () => {
                 })
         })
     })
-//     describe("PUT Request.", function(){
-//         describe("Updating a user in the users collection of the D&C Users Database.",function(){
-//             it("Successful updation should return status code equal to 200 and the updated user.", async function(){
-//                 const id = "60d1da772312d04f305dd5ea";
-//                 let res = await chai
-//                 .request(server.app)
-//                 .put('/wash/:id' + id).send({
-//                     FirstName: "talif"
-//         })
-   
-//         expect(res.status).to.equal(200);
-//         expect(res).to.be.an('object');
-//         res.body.should.be.a('object');
-//         res.body.should.have.property('_id');
-//         res.body.should.have.property('FirstName').eq("talif");
-//         res.body.should.have.property('LastName').eq("deva");
-//         res.body.should.have.property('phone').eq(8485033470);
-//         res.body.should.have.property('Ratings').eq("4");
-//          });
-//          it("If the id doesn't exists.", async function(){
-//             const id = "360";
-//             let res = await chai
-//             .request(server.app)
-//             .put('/wash/:id' + id).send({
-//                 name: "talif"
-//     });
-   
-//         expect(res.status).to.equal(404);
-//         expect(res).to.be.an('object');
-//            });
-//        });
-//    });
-// })
+
 //Test the put route
     describe('PUT /wash/:id', () => {
         it("it should PUT a new washer by id", (done) => {

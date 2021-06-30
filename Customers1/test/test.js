@@ -13,7 +13,7 @@ describe("Tasks API", () => {
                 .get("/customer")
                 .end((err, response) => {
                     response.should.have.status(200);
-                    response.body.length.should.be.eq(2);
+                    response.body.length.should.be.eq(5);
                     done();
                 })
         })
@@ -49,10 +49,10 @@ describe('POST /customer/:id', () => {
 
 // //Test the put route
     describe('PUT /customer/:id', () => {
-    it("it should PUT a new washer by id", (done) => {
-        const taskId = "60d1d60eed1812048c41b3de";
+    it("it should PUT a new customer by id", (done) => {
+        const taskId = "60d9544191ee69189cec4980";
         const task = {
-            Name: "admin"
+            Name: "danny"
         }
         chai.request(server)
             .put('/customer/' + taskId)
@@ -62,7 +62,7 @@ describe('POST /customer/:id', () => {
                 res.body.should.be.a('object');
                 // res.body.should.be.a('object');
                 res.body.should.have.property('_id');
-                res.body.should.have.property('Name').eq("admin");
+                res.body.should.have.property('Name').eq("danny");
                 // res.body.should.have.property('LastName').eq("deva");
                 // res.body.should.have.property('Phone').eq(8485033470);
                 // res.body.should.have.property('Ratings').eq(4);

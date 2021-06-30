@@ -28,6 +28,10 @@ const customerSchema = new Schema({
     Address: {
         type: String,
         required: true
+    },
+    noOfwash:{
+        type: Number,
+        required:true
     }
 })
 

@@ -5,28 +5,6 @@ const bodyParser = require("body-parser");
 const Addon1 = require("../model/addons");
 
 router.use(bodyParser.json());
-//handling errors
-// const handleErrors = (err) => {
-//     let error = {
-//       name: "",
-//       forServices: "",
-//       cost: "",
-//       status: "",
-//     };
-  
-//     //duplicate service plan name
-//     if (err.code === 11000) {
-//       error.name = "Entered addon name is already present";
-//       return error;
-//     }
-  
-//     if (err.message.includes("Addon validation failed")) {
-//       Object.values(err.error).forEach(({ properties }) => {
-//         error[properties.path] = properties.message;
-//       });
-//     }
-//     return error;
-//   };
 
 router.get("/addon", (req, res) => {
     Addon1.find({}).then((addon) => {

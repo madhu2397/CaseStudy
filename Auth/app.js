@@ -15,10 +15,10 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 //swagger
-const swaggerUi = require("swagger-ui-express");
+// const swaggerUi = require("swagger-ui-express");
 // swaggerDocument = require("./swagger.json");
-swaggerDocument = require("./authen.json");
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// swaggerDocument = require("./authen.json");
+// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // database connection
 const dbURI = "mongodb+srv://Case-study:case@cluster0.fbzn5.mongodb.net/Middle?retryWrites=true&w=majority";
@@ -33,7 +33,6 @@ app.get("/wash",requireAuth);
 app.get('/', (req, res) => res.render('home'));
 
 
-// app.get('/wash', requireAuth, (req, res) => res.render('wash'));
 app.get("/wash", (req, res) => {
   axios.get("http://localhost:4545/customer").then((response) => {
       // console.log(response.data);

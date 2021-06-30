@@ -13,7 +13,7 @@ describe("Tasks API", () => {
                 .get("/adminp")
                 .end((err, response) => {
                     response.should.have.status(200);
-                    response.body.length.should.be.eq(2);
+                    response.body.length.should.be.eq(4);
                     done();
                 })
         })
