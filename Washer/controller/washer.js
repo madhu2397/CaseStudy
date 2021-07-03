@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const bodyParser = require("body-parser");
-const Washer1 = require("./washers");
+const Washer1 = require("../model/washers");
 
 router.use(bodyParser.json());
 

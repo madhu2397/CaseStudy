@@ -26,10 +26,8 @@
           "summary": "Get all admins in system",
           "responses": {
             "200": {
-              "description": "Get all admin from the system",
-              "schema": {
-                "$ref": "#/definitions/admin"
-              }
+              "description": "Get all admin from the system"
+              
             }
           }
         },
@@ -42,10 +40,8 @@
             {
               "name": "user",
               "in": "body",
-              "description": "admin that we want to create",
-              "schema": {
-                "$ref": "#/definitions/admin"
-              }
+              "description": "admin that we want to create"
+              
             }
           ],
           "produces": [
@@ -53,10 +49,8 @@
           ],
           "responses": {
             "200": {
-              "description": "New admin is created",
-              "schema": {
-                "$ref": "#/definitions/admin"
-              }
+              "description": "New admin is created"
+              
             }
           }
         }
@@ -78,10 +72,8 @@
           "summary": "Get single admin in system",
           "responses": {
             "200": {
-              "description": "All admin are here",
-              "schema": {
-                "$ref": "#/definitions/admin"
-              }
+              "description": "All admin are here"
+              
             }
           }
         },
@@ -90,10 +82,8 @@
             {
               "name": "admin",
               "in": "body",
-              "description": "admin with new values of properties",
-              "schema": {
-                "$ref": "#/definitions/updateadmin"
-              }
+              "description": "admin with new values of properties"
+              
             }
           ],
           "tags": [
@@ -102,10 +92,8 @@
           "summary": "Get all Update admin in system",
           "responses": {
             "200": {
-              "description": "Update admin",
-              "schema": {
-                "$ref": "#/definitions/admin"
-              }
+              "description": "Update admin"
+              
             }
           }
         },
@@ -116,10 +104,8 @@
           ],
           "responses": {
             "200": {
-              "description": "admin is deleted",
-              "schema": {
-                "$ref": "#/definitions/admin"
-              }
+              "description": "admin is deleted"
+              
             }
           }
         }

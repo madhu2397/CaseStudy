@@ -26,10 +26,8 @@
           "summary": "Get all services in system",
           "responses": {
             "200": {
-              "description": "Get all service from the system",
-              "schema": {
-                "$ref": "#/definitions/service"
-              }
+              "description": "Get all service from the system"
+              
             }
           }
         },
@@ -42,10 +40,8 @@
             {
               "name": "user",
               "in": "body",
-              "description": "service that we want to create",
-              "schema": {
-                "$ref": "#/definitions/service"
-              }
+              "description": "service that we want to create"
+              
             }
           ],
           "produces": [
@@ -53,10 +49,8 @@
           ],
           "responses": {
             "200": {
-              "description": "New service is created",
-              "schema": {
-                "$ref": "#/definitions/service"
-              }
+              "description": "New service is created"
+              
             }
           }
         }
@@ -78,10 +72,8 @@
           "summary": "Get single service in system",
           "responses": {
             "200": {
-              "description": "All service are here",
-              "schema": {
-                "$ref": "#/definitions/service"
-              }
+              "description": "All service are here"
+              
             }
           }
         },
@@ -90,10 +82,8 @@
             {
               "name": "service",
               "in": "body",
-              "description": "service with new values of properties",
-              "schema": {
-                "$ref": "#/definitions/updateservice"
-              }
+              "description": "service with new values of properties"
+              
             }
           ],
           "tags": [
@@ -102,10 +92,8 @@
           "summary": "Get all Update carservice in system",
           "responses": {
             "200": {
-              "description": "Update Carservice",
-              "schema": {
-                "$ref": "#/definitions/Carservice"
-              }
+              "description": "Update Carservice"
+              
             }
           }
         },
@@ -116,10 +104,8 @@
           ],
           "responses": {
             "200": {
-              "description": "service is deleted",
-              "schema": {
-                "$ref": "#/definitionsservice"
-              }
+              "description": "service is deleted"
+              
             }
           }
         }

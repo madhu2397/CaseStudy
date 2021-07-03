@@ -26,10 +26,8 @@
           "summary": "Get all washer in system",
           "responses": {
             "200": {
-              "description": "Get all washers from the system",
-              "schema": {
-                "$ref": "#/definitions/washer"
-              }
+              "description": "Get all washers from the system"
+              
             }
           }
         },
@@ -42,10 +40,8 @@
             {
               "name": "washer",
               "in": "body",
-              "description": "washer that we want to create",
-              "schema": {
-                "$ref": "#/definitions/washer"
-              }
+              "description": "washer that we want to create"
+              
             }
           ],
           "produces": [
@@ -53,10 +49,8 @@
           ],
           "responses": {
             "200": {
-              "description": "New washer is created",
-              "schema": {
-                "$ref": "#/definitions/washer"
-              }
+              "description": "New washer is created"
+              
             }
           }
         }
@@ -78,10 +72,8 @@
           "summary": "Get single washer in system",
           "responses": {
             "200": {
-              "description": "All washer are here",
-              "schema": {
-                "$ref": "#/definitions/washer"
-              }
+              "description": "All washer are here"
+              
             }
           }
         },
@@ -90,10 +82,8 @@
             {
               "name": "washer",
               "in": "body",
-              "description": "washer with new values of properties",
-              "schema": {
-                "$ref": "#/definitions/updatewasher"
-              }
+              "description": "washer with new values of properties"
+              
             }
           ],
           "tags": [
@@ -102,10 +92,8 @@
           "summary": "Get all Update washer in system",
           "responses": {
             "200": {
-              "description": "Update washer",
-              "schema": {
-                "$ref": "#/definitions/washer"
-              }
+              "description": "Update washer"
+              
             }
           }
         },
@@ -116,10 +104,8 @@
           ],
           "responses": {
             "200": {
-              "description": "User is deleted",
-              "schema": {
-                "$ref": "#/definitions/washer"
-              }
+              "description": "User is deleted"
+              
             }
           }
         }

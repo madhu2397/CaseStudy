@@ -1,21 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const customerSchema = new Schema({
+const scheduleSchema = new Schema({
     
     Name:{
         type: String,
         require:true,
         // trim: true
     },
-    Email:{
-        type: String,
-        // trim: true,
-        lowercase: true,
-        unique: true,
-    },
-    Password:{
-        type:String,
-        // trim: true,
+    Mobile:{
+        type: Number,
         required:true
     },
     Car_no: {
@@ -30,11 +23,10 @@ const customerSchema = new Schema({
         type: String,
         required: true
     },
-    noOfwash:{
-        type: Number,
-        required:true
+    booked_time : {
+        type : Date
     }
-    });
+});
 
-const Customer = mongoose.model("Customer",customerSchema);
-module.exports = Customer;
+const schedule = mongoose.model("schedule",scheduleSchema);
+module.exports = schedule;

@@ -7,7 +7,6 @@ const serviceRoute = require("./controller/service");
 const PromoRoute = require("./controller/promo");
 const AddonRoute = require("./controller/addon");
 const AdminRoute = require("./controller/createa");
-
 const swaggerUi = require("swagger-ui-express");
 const { default: axios } = require("axios");
 
@@ -46,14 +45,8 @@ app.get("/viewcus", (req, res) => {
 })
 //post customer and car
 app.post("/postcus", (req, res) => {
-    axios.post("http://localhost:4545/customer", {
-        Name: "Alvee",
-        Email: "alvee@gmail.com",
-        Password: "aba",
-        Car_no: 90,
-        Model_no: 2455,
-        Address: "a/p-243",
-    }).then((response) => {
+    axios.post("http://localhost:4545/customer", req.body
+        ).then((response) => {
         console.log(response.data);
         var customer = response.data;
         res.send(customer);
@@ -61,6 +54,7 @@ app.post("/postcus", (req, res) => {
         console.log(err.message);
     })
 })
+
 //view-get washer
 app.get("/viewwash", (req, res) => {
     axios.get("http://localhost:7000/wash").then((response) => {
@@ -73,12 +67,8 @@ app.get("/viewwash", (req, res) => {
 })
 //post washer
 app.post("/postwash", (req, res) => {
-    axios.post("http://localhost:7000/wash", {
-        FirstName: "Adon",
-        LastName: "Deol",
-        Phone: 7875355124,
-        Ratings: 4
-    }).then((response) => {
+    axios.post("http://localhost:7000/wash", req.body
+    ).then((response) => {
         console.log(response.data);
         var customer = response.data;
         res.send(customer);
@@ -98,6 +88,16 @@ app.get("/leaderboard", (req, res) => {
             if (err) throw err;
         });
 });
+//view order
+app.get("/vieworder", (req, res) => {
+    axios.get("http://localhost:4545/order").then((response) => {
+        // console.log(response.data);
+        var order = response.data;
+        res.send(order);
+    }).catch((err) => {
+        console.log(err.message);
+    })
+})
 module.exports = app.listen(port, (req, res) => {
     console.log("Server up and running at port " + port);
 })

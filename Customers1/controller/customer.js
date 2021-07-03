@@ -5,8 +5,11 @@ const bodyParser = require("body-parser");
 const Customer1 = require("../model/Schema");
 const MongoClient = require('mongodb').MongoClient;
 router.use(bodyParser.json());
+var authMiddle = require("../../Auth/Middleware/middleware");
+// const requireAuth = require("../middleware/authMiddleware");
+// const authController = require("../controller/authController")
 
-router.get("/customer", (req, res) => {
+router.get("/customer",authMiddle, (req, res) => {
     Customer1.find({}).then((Customer) => {
         res.send(Customer);
         console.log(Customer);
@@ -56,34 +59,34 @@ router.get("/leaderboard", function (req, res) {
         .sort({ noOfwash: -1 });
 });
 
-// router.get("/searchwasher",(req , res )=> {
-//         MongoClient.connect(
-//         'mongodb+srv://Case-study:case@cluster0.fbzn5.mongodb.net/washer?retryWrites=true&w=majority',
-//         { useNewUrlParser: true, useUnifiedTopology: true },
-//         function(connectErr, client) {
-//           assert.equal(null, connectErr);
-//           const coll = client.db('washer').collection('washers');
-//           const query = {FirstName : "washer"}
-//           coll.find(query).toArray(function(err, result) {
-//             if (err) throw err;
-//             res.send(result);
-//           client.close();
-//         });
-//     })
-// })
-router.get("/searchwasher/:name",(req , res )=> {
+router.get("/searchwasher/:name", (req, res) => {
     MongoClient.connect(
-    'mongodb+srv://Case-study:case@cluster0.fbzn5.mongodb.net/washer?retryWrites=true&w=majority',
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    function(connectErr, client) {
-      const coll = client.db('washer').collection('washers');
-      const query = {FirstName : req.params.name}
-      coll.find(query).toArray(function(err, result) {
-        if (err) throw err;
-        res.send(result);
-      client.close();
-    });
+        'mongodb+srv://Case-study:case@cluster0.fbzn5.mongodb.net/washer?retryWrites=true&w=majority',
+        { useNewUrlParser: true, useUnifiedTopology: true },
+        function (connectErr, client) {
+            const coll = client.db('washer').collection('washers');
+            const query = { FirstName: req.params.name }
+            coll.find(query).toArray(function (err, result) {
+                if (err) throw err;
+                res.send(result);
+                client.close();
+            });
+        })
 })
+//search order acceptance
+router.get("/search/:name", (req, res) => {
+    MongoClient.connect(
+        'mongodb+srv://Case-study:case@cluster0.fbzn5.mongodb.net/washer?retryWrites=true&w=majority',
+        { useNewUrlParser: true, useUnifiedTopology: true },
+        function (connectErr, client) {
+            const coll = client.db('washer').collection('orderws');
+            const query = { Name: req.params.name }
+            coll.find(query).toArray(function (err, result) {
+                if (err) throw err;
+                res.send(result);
+                client.close();
+            });
+        })
 })
 
 module.exports = router;

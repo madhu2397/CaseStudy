@@ -26,10 +26,7 @@
         "summary": "Get all Car in system",
         "responses": {
           "200": {
-            "description": "Get all Cars from the system",
-            "schema": {
-              "$ref": "#/definitions/car"
-            }
+            "description": "Get all Cars from the system"
           }
         }
       },
@@ -42,10 +39,7 @@
           {
             "name": "user",
             "in": "body",
-            "description": "User that we want to create",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
+            "description": "User that we want to create"
           }
         ],
         "produces": [
@@ -53,10 +47,8 @@
         ],
         "responses": {
           "200": {
-            "description": "New user is created",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
+            "description": "New user is created"
+            
           }
         }
       }
@@ -78,10 +70,8 @@
         "summary": "Get single car in system",
         "responses": {
           "200": {
-            "description": "All car are here",
-            "schema": {
-              "$ref": "#/definitions/car"
-            }
+            "description": "All car are here"
+            
           }
         }
       },
@@ -90,10 +80,8 @@
           {
             "name": "car",
             "in": "body",
-            "description": "Car with new values of properties",
-            "schema": {
-              "$ref": "#/definitions/updatecar"
-            }
+            "description": "Car with new values of properties"
+            
           }
         ],
         "tags": [
@@ -102,10 +90,8 @@
         "summary": "Get all Update car in system",
         "responses": {
           "200": {
-            "description": "Update Car",
-            "schema": {
-              "$ref": "#/definitions/Car"
-            }
+            "description": "Update Car"
+            
           }
         }
       },
@@ -116,10 +102,8 @@
         ],
         "responses": {
           "200": {
-            "description": "User is deleted",
-            "schema": {
-              "$ref": "#/definitions/Car"
-            }
+            "description": "User is deleted"
+            
           }
         }
       }

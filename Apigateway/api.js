@@ -52,6 +52,29 @@ api.get('/washer', (req, res) => {
         res.send(response.data);
     })
 })
+//post customer
+api.post("/postcustomer", (req, res) => {
+    axios.post("http://localhost:4545/customer", req.body
+    ).then((response) => {
+        console.log(response.data);
+        var customer = response.data;
+        res.send(customer);
+    }).catch((err) => {
+        console.log(err.message);
+    })
+})
+
+//post washer
+api.post("/postwasher", (req, res) => {
+    axios.post("http://localhost:7000/wash", req.body
+    ).then((response) => {
+        console.log(response.data);
+        var washer = response.data;
+        res.send(washer);
+    }).catch((err) => {
+        console.log(err.message);
+    })
+})
 
 api.listen(port, (req, res) => {
     console.log("Server up and running at port " + port);

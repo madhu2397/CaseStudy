@@ -26,10 +26,8 @@
           "summary": "Get all promos in system",
           "responses": {
             "200": {
-              "description": "Get all promo from the system",
-              "schema": {
-                "$ref": "#/definitions/promo"
-              }
+              "description": "Get all promo from the system"
+              
             }
           }
         },
@@ -42,10 +40,8 @@
             {
               "name": "user",
               "in": "body",
-              "description": "promo that we want to create",
-              "schema": {
-                "$ref": "#/definitions/promo"
-              }
+              "description": "promo that we want to create"
+              
             }
           ],
           "produces": [
@@ -53,10 +49,8 @@
           ],
           "responses": {
             "200": {
-              "description": "New promo is created",
-              "schema": {
-                "$ref": "#/definitions/promo"
-              }
+              "description": "New promo is created"
+              
             }
           }
         }
@@ -78,10 +72,8 @@
           "summary": "Get single promo in system",
           "responses": {
             "200": {
-              "description": "All promo are here",
-              "schema": {
-                "$ref": "#/definitions/promo"
-              }
+              "description": "All promo are here"
+              
             }
           }
         },
@@ -90,10 +82,8 @@
             {
               "name": "promo",
               "in": "body",
-              "description": "promo with new values of properties",
-              "schema": {
-                "$ref": "#/definitions/updatepromo"
-              }
+              "description": "promo with new values of properties"
+              
             }
           ],
           "tags": [
@@ -102,10 +92,8 @@
           "summary": "Get all Update promo in system",
           "responses": {
             "200": {
-              "description": "Update promo",
-              "schema": {
-                "$ref": "#/definitions/promo"
-              }
+              "description": "Update promo"
+              
             }
           }
         },
@@ -116,10 +104,8 @@
           ],
           "responses": {
             "200": {
-              "description": "promo is deleted",
-              "schema": {
-                "$ref": "#/definitions/promo"
-              }
+              "description": "promo is deleted"
+              
             }
           }
         }

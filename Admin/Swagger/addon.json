@@ -26,10 +26,7 @@
           "summary": "Get all addons in system",
           "responses": {
             "200": {
-              "description": "Get all addon from the system",
-              "schema": {
-                "$ref": "#/definitions/addon"
-              }
+              "description": "Get all addon from the system"         
             }
           }
         },
@@ -42,10 +39,8 @@
             {
               "name": "user",
               "in": "body",
-              "description": "addon that we want to create",
-              "schema": {
-                "$ref": "#/definitions/addon"
-              }
+              "description": "addon that we want to create"
+              
             }
           ],
           "produces": [
@@ -53,10 +48,8 @@
           ],
           "responses": {
             "200": {
-              "description": "New addon is created",
-              "schema": {
-                "$ref": "#/definitions/addon"
-              }
+              "description": "New addon is created"
+              
             }
           }
         }
@@ -78,10 +71,8 @@
           "summary": "Get single addon in system",
           "responses": {
             "200": {
-              "description": "All addon are here",
-              "schema": {
-                "$ref": "#/definitions/addon"
-              }
+              "description": "All addon are here"
+              
             }
           }
         },
@@ -90,10 +81,8 @@
             {
               "name": "addon",
               "in": "body",
-              "description": "addon with new values of properties",
-              "schema": {
-                "$ref": "#/definitions/updateaddon"
-              }
+              "description": "addon with new values of properties"
+              
             }
           ],
           "tags": [
@@ -102,10 +91,8 @@
           "summary": "Get all Update caraddon in system",
           "responses": {
             "200": {
-              "description": "Update Caraddon",
-              "schema": {
-                "$ref": "#/definitions/Caraddon"
-              }
+              "description": "Update Caraddon"
+              
             }
           }
         },
@@ -116,10 +103,8 @@
           ],
           "responses": {
             "200": {
-              "description": "addon is deleted",
-              "schema": {
-                "$ref": "#/definitionsaddon"
-              }
+              "description": "addon is deleted"
+              
             }
           }
         }
