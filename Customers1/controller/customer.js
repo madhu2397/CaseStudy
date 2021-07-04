@@ -6,6 +6,8 @@ const Customer1 = require("../model/Schema");
 const MongoClient = require('mongodb').MongoClient;
 router.use(bodyParser.json());
 var authMiddle = require("../../Auth/Middleware/middleware");
+const axios = require("axios")
+// const payment = require("../../Payment/payment1");
 // const requireAuth = require("../middleware/authMiddleware");
 // const authController = require("../controller/authController")
 
@@ -88,5 +90,15 @@ router.get("/search/:name", (req, res) => {
             });
         })
 })
-
+//payment
+    router.post("/postpay", (req, res) => {
+        axios.post("http://localhost:5555/payment", req.body
+        ).then((response) => {
+            console.log(response.data);
+            var payment = response.data;
+            res.send(payment);
+        }).catch((err) => {
+            console.log(err.message);
+        })
+    })
 module.exports = router;

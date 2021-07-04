@@ -6,17 +6,17 @@ let server = require("../main");
 chai.use(chaiHttp);
 chai.should();
 
-describe("Tasks API", () => {
-    describe("GET /customer", () => {
-        it("it should get all the tasks", (done) => {
-            chai.request(server)
-                .get("/customer")
-                .end((err, response) => {
-                    response.should.have.status(200);
-                    response.body.length.should.be.eq(5);
-                    done();
-                })
-        })
+// describe("Tasks API", () => {
+//     describe("GET /customer", () => {
+//         it("it should get all the tasks", (done) => {
+//             chai.request(server)
+//                 .get("/customer")
+//                 .end((err, response) => {
+//                     response.should.have.status(200);
+//                     response.body.length.should.be.eq(5);
+//                     done();
+//                 })
+//         })
         describe('GET /customer/:id', () => {
             it("it should get by id", (done) => {
                 const taskId = "60d1d60eed1812048c41b3de"
@@ -28,8 +28,7 @@ describe("Tasks API", () => {
                     })
             })
         })
-    })
-})
+
 describe('POST /customer/:id', () => {
     it("it should POST a new customer by id", (done) => {
         const task = {

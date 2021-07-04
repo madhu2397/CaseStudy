@@ -23,7 +23,7 @@ payment.post('/payment', async (req, res) => {
         console.log(err);
     }
 })
-payment.listen(port,()=>{
+module.exports=payment.listen(port,()=>{
     console.log("server up and running");
 })
 

@@ -10,10 +10,10 @@ const swaggerUi = require("swagger-ui-express");
 const Washer1 = require("../Washer/model/washers");
 //auth
 const cookieParser = require('cookie-parser');
-const requireAuth = require("./middleware/authMiddleware");
+// const requireAuth = require("./middleware/authMiddleware");
 app.use(express.json());
 app.use(cookieParser());
-const user = require("./model/User");
+// const user = require("./model/User");
 const { response } = require("express");
 //swagger
 swaggerDocument = require("./car.json");

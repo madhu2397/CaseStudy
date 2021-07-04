@@ -13,7 +13,7 @@ describe("Tasks API", () => {
                 .get("/wash")
                 .end((err, response) => {
                     response.should.have.status(200);
-                    response.body.length.should.be.eq(5);
+                    response.body.length.should.be.eq(11);
                     done();
                 })
         })

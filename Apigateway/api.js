@@ -75,7 +75,18 @@ api.post("/postwasher", (req, res) => {
         console.log(err.message);
     })
 })
-
+//post payment
+//payment
+api.post("/postpay", (req, res) => {
+    axios.post("http://localhost:5555/payment", req.body
+    ).then((response) => {
+        console.log(response.data);
+        var payment = response.data;
+        res.send(payment);
+    }).catch((err) => {
+        console.log(err.message);
+    })
+})
 api.listen(port, (req, res) => {
     console.log("Server up and running at port " + port);
 })
