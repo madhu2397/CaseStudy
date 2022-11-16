@@ -17,17 +17,17 @@ chai.should();
 //                     done();
 //                 })
 //         })
-        describe('GET /customer/:id', () => {
-            it("it should get by id", (done) => {
-                const taskId = "60d1d60eed1812048c41b3de"
-                chai.request(server)
-                    .get('/customer' + taskId)
-                    .end((err, response) => {
-                        response.body.should.be.a('object');
-                        done();
-                    })
+describe('GET /customer/:id', () => {
+    it("it should get by id", (done) => {
+        const taskId = "60d1d60eed1812048c41b3de"
+        chai.request(server)
+            .get('/customer' + taskId)
+            .end((err, response) => {
+                response.body.should.be.a('object');
+                done();
             })
-        })
+    })
+})
 
 describe('POST /customer/:id', () => {
     it("it should POST a new customer by id", (done) => {
@@ -47,7 +47,7 @@ describe('POST /customer/:id', () => {
 })
 
 // //Test the put route
-    describe('PUT /customer/:id', () => {
+describe('PUT /customer/:id', () => {
     it("it should PUT a new customer by id", (done) => {
         const taskId = "60d9544191ee69189cec4980";
         const task = {

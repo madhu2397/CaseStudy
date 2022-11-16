@@ -20,7 +20,7 @@ router.get("/customer",authMiddle, (req, res) => {
     })
 })
 
-router.post("/customer", (req, res) => {
+router.post("/customer",authMiddle, (req, res) => {
     Customer1.create(req.body).then((Customer) => {
         res.send(Customer);
     }).catch((err) => {
@@ -60,7 +60,7 @@ router.get("/leaderboard", function (req, res) {
         })
         .sort({ noOfwash: -1 });
 });
-
+//search washer
 router.get("/searchwasher/:name", (req, res) => {
     MongoClient.connect(
         'mongodb+srv://Case-study:case@cluster0.fbzn5.mongodb.net/washer?retryWrites=true&w=majority',
@@ -92,7 +92,7 @@ router.get("/search/:name", (req, res) => {
 })
 //payment
     router.post("/postpay", (req, res) => {
-        axios.post("http://localhost:5555/payment", req.body
+        axios.post("http://localhost:5000/payment", req.body
         ).then((response) => {
             console.log(response.data);
             var payment = response.data;

@@ -13,7 +13,7 @@ const { registerschema, loginschema } = require("../../Auth/Controller/validatio
 
 router.use(express.json());
 
-//Connect to DB
+//Database connection
 const dbURL =
   "mongodb+srv://Case-study:case@cluster0.fbzn5.mongodb.net/Auth?retryWrites=true&w=majority";
 
@@ -61,7 +61,6 @@ router.post("/login", async (req, res) => {
   if (!emailExist) return res.status(400).send({ message: " Email does not exist!" });
   //res.json({ userid: emailExist._id });
 
-  //const token = jwt.sign({_id: User._id}, 'fhencjskholjoupuk');
   const token = createToken(User._id)
   res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
   console.log(token);

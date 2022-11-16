@@ -26,8 +26,10 @@
           "summary": "Get all washer in system",
           "responses": {
             "200": {
-              "description": "Get all washers from the system"
-              
+              "description": "Get all washers from the system",
+              "schema": {
+                "$ref": "#/definitions/washer"
+              }
             }
           }
         },

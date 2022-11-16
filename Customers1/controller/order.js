@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
 const Order1 = require("../model/orders");
+var authMiddle = require("../../Auth/Middleware/middleware");
 router.use(bodyParser.json());
 
 router.get("/order", (req, res) => {
@@ -13,7 +14,7 @@ router.get("/order", (req, res) => {
     })
 })
 
-router.post("/order", (req, res) => {
+router.post("/order",authMiddle, (req, res) => {
     Order1.create(req.body).then((order) => {
         console.log(order);
         res.send("Thank You we will let you know");

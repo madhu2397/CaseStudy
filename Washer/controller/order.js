@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const Orderw1 = require("../model/orders");
 const MongoClient = require('mongodb').MongoClient;
 router.use(bodyParser.json());
+var authMiddle = require("../../Auth/Middleware/middleware");
 
 router.get("/orderw", (req, res) => {
     Orderw1.find({}).then((order) => {

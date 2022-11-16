@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Admin Api",
-    "description": "Admin API Microservice",
+    "title": "Customer Api",
+    "description": "Customer API Microservice",
     "contact": {
       "name": "Madhuri Gavade",
       "url": "https://opensource.org/licenses/MIT"

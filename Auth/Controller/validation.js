@@ -11,11 +11,3 @@ const loginschema = joi.object({
     password: joi.string().min(6).required()
 })
 module.exports = {registerschema, loginschema};
-// const registerValidation = (data) => {
-//     const schema = joi.object({
-//         name: joi.string().min(6).required(),
-//         email: joi.string().lowercase(),
-//         password: joi.string().required(),
-//     });
-//     return schema.validate(data, schema);
-//   };

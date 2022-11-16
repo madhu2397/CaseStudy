@@ -3,6 +3,7 @@ const app = express();
 const router = express.Router();
 const bodyParser = require("body-parser");
 const Admin1 = require("../model/creatsa");
+// var authMiddle = require("../../Auth/Middleware/middleware");
 
 router.use(bodyParser.json());
 
